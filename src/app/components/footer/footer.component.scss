@@ -1,0 +1,27 @@
+.footer-header {
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-family: "Oswald", Sans-serif;
+}
+
+@media only screen and (max-width: 830px) {
+  .footer-header {
+    flex-direction: column;
+    .info {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .footer-header {
+    .info {margin-top: 1rem;
+      font-size: 1rem;
+    }
+  }
+}

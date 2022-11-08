@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+// @import "~leaflet/dist/leaflet.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web:ital,wght@1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.btn {
+  background: rgb(111, 206, 238);
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+  color: white;
+}
+.btn:hover {
+  background: rgba(111, 206, 238, 0.5);
+}
+.color {
+  color: rgb(111, 206, 238);
+  font-weight: bold;
+}
+
+

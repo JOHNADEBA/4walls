@@ -1,0 +1,60 @@
+{
+  "titles": {
+    "home": "Home",
+    "about": "About Us",
+    "our-work": "Our Work",
+    "contact": "Contact"
+  },
+  "routes": {
+    "home": "home",
+    "about": "about-us",
+    "our-work": "our-work",
+    "contact": "contact"
+  },
+ 
+  "headerHome": "Home",
+  "headerAbout": "About Us",
+  "headerWork": "Our Work",
+  "headerContact": "Contact",
+ 
+
+  "homeitems": [
+    {
+      "homeSnippetHeader": "Authenticated Materials",
+      "homeSnippetBody": "100% of the material we process comes from State Forests and has FSC® certification (C131643)."
+    },
+
+    {
+      "homeSnippetHeader": "Delivery time",
+      "homeSnippetBody": "We will deliver your timber to any place in Poland. Because it’s adequately protected, it arrives safe and always on time."
+    },
+
+    {
+      "homeSnippetHeader": "Our Drive And Expereince",
+      "homeSnippetBody": "See how we use the knowledge we have gained over the last 60 years to produce timber. That’s why we are still a leader in the region."
+    },
+
+    {
+      "homeSnippetHeader": "Consultation, guidance and Advice",
+      "homeSnippetBody": "We provide advice to all of our clients at every stage of the order. We suggest the appropriate type of material and select the adequate processing."
+    }
+  ],
+
+  "aboutHead": "Behind every well-done work, there is a good craftsman.",
+  "aboutParagraph1": "We are a promising construction company that performs its work with excellence.",
+  "aboutParagraph2": "We are aware of the demands and complexity of our work, which is why we professionally present and advise you on the most suitable system work for you.",
+  "aboutParagraph3": "During the period of operation, we marked a number of houses, commercial, school, tourist, production, business, sports and residential buildings in Slovenia and abroad.",
+  "aboutParagraph4": "A lot of experience, quality services and the use of high-quality materials are a guarantee for long- lasting, effective and affordable solutions. We build and implement works that exceed customer expectations.",
+  "aboutFooter": "We look forward to working with you.",
+
+  "contactFormHeader": "We will love to hear from you.",
+  "contactFormHeadContact": "Contact",
+  "contactFormHeadForm": "Form",
+  "contactFormName": "Name",
+  "contactFormEmail": "Email",
+  "contactFormPhone": "Phone",
+  "contactFormMessage": "Message",
+  "contactFormTerms": "By using this form, you agree to the storage and processing of your data by this website in accordance with data protection law.",
+  "contactFormBtn": "Send",
+  "contactDetailsHeadDetails": "Details"
+}

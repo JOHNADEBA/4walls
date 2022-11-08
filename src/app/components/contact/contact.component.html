@@ -1,0 +1,160 @@
+<app-header></app-header>
+<div class="contact-container">
+  <div class="contact-form" [class.contact-form-show]="isContact">
+    <p-card header="{{ 'contactFormHeader' | translate }}">
+      <form #contactForm="ngForm" (ngSubmit)="getTrip(contactForm.value)">
+        <h2 class="mb-4 text-4xl">
+          {{ "contactFormHeadContact" | translate }}
+          <span class="color">{{ "contactFormHeadForm" | translate }} </span>
+        </h2>
+
+        <div class="p-grid p-fluid">
+          <div class="p-col-12 p-md-4 mb-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                <i class="pi pi-user color"></i>
+              </span>
+              <span class="p-float-label">
+                <input
+                  type="text"
+                  id="inputgroup"
+                  pInputText
+                  name="name"
+                  ngModel
+                  #name="ngModel"
+                />
+                <label for="inputgroup">{{ "contactFormName" | translate }}</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="p-col-12 p-md-4 mb-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                <i class="pi pi-envelope color"></i>
+              </span>
+              <span class="p-float-label">
+                <input
+                  type="text"
+                  id="inputgroup"
+                  pInputText
+                  name="email"
+                  ngModel
+                  #email="ngModel"
+                />
+                <label for="inputgroup">{{ "contactFormEmail" | translate }}</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="p-col-12 p-md-4 mb-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                <i class="pi pi-phone color"></i>
+              </span>
+              <span class="p-float-label">
+                <input
+                  type="text"
+                  id="inputgroup"
+                  pInputText
+                  name="phone"
+                  ngModel
+                  #phone="ngModel"
+                />
+                <label for="inputgroup">{{ "contactFormPhone" | translate }}</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="p-col-12 p-md-4 mb-4">
+            <span class="p-float-label">
+              <textarea
+                inputId="textarea"
+                rows="5"
+                cols="30"
+                name="message"
+                ngModel
+                #message="ngModel"
+                pInputTextarea
+                [autoResize]="true"
+              ></textarea>
+              <label for="textarea">{{ "contactFormMessage" | translate }}</label>
+            </span>
+          </div>
+
+          <div class="p-col-12 p-md-4 mb-4">
+            <p-fileUpload
+              name="myfile[]"
+              url="./upload.php"
+              [multiple]="true"
+              [maxFileSize]="1000000"
+              chooseLabel="Browse"
+              invalidFileSizeMessageSummary="{0}: Invalid file size, "
+              invalidFileSizeMessageDetail="maximum upload size is {0}."
+              (onUpload)="onUpload($event)"
+            ></p-fileUpload>
+          </div>
+
+          <div class="p-col-12 p-md-4 mb-4">
+            <input
+              id="file"
+              type="file"
+              multiple
+              class="form-control"
+              (change)="onUpload($event)"
+            />
+          </div>
+
+          <div
+            class="p-col-12 p-md-4 mb-4 flex justify-content-between align-items-center"
+          >
+            <span class="p-float-label">
+              <p-inputSwitch
+                name="terms"
+                ngModel
+                #terms="ngModel"
+              ></p-inputSwitch>
+            </span>
+            <h5 class="ml-3">{{ "contactFormTerms" | translate }}
+            </h5>
+          </div>
+
+          <button class="btn">{{ "contactFormBtn" | translate }}</button>
+        </div>
+      </form>
+    </p-card>
+  </div>
+  <div class="contact-details" [class.contact-details-show]="isContact">
+    <p-card class="p-0">  
+      <h2 class="mb-4 text-4xl">{{ "contactFormHeadContact" | translate }} <span class="color">{{ "contactDetailsHeadDetails" | translate }}</span></h2>
+
+      <div
+        class="each-contact-head w-full flex justify-content-between flex-wrap"
+      >
+        <div class="each-contact">
+          <h3><i class="mb-2 pi pi-phone text-3xl color"></i></h3>
+          <div>
+            <p class="text-xs mb-1">
+              <span class="color"> Jan: </span> +386 403 87330
+            </p>
+            <p class="text-xs">
+              <span class="color"> Simon:</span>+386 408 00915
+            </p>
+          </div>
+        </div>
+
+        <div class="each-contact">
+          <h3><i class="mb-2 pi pi-envelope text-3xl color"></i></h3>
+          <p class="text-xs">4walls.gradbenadela@gmail.com</p>
+        </div>
+
+        <div class="each-contact third">
+          <h3><i class="mb-2 pi pi-map-marker text-3xl color"></i></h3>
+          <p class="text-xs">Mislinjska Dobrava 68</p>
+          <p class="text-xs">Slovenia</p>
+        </div>
+      </div>
+    </p-card>
+    <div id="map"></div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+{
+    "titles": {
+        "home":"Dom",
+        "about": "O Nas",
+        "our-work": "Naše Delo",
+        "contact": "Kontakt"
+       
+    },
+    "routes": {
+        "home":"dom",
+        "about": "o-nas",
+        "our-work": "naše-delo",
+        "contact": "kontakt"
+    },
+
+
+
+    "headerHome":"Dom",
+    "headerAbout":"O Nas",
+    "headerWork":"Naše Delo",
+    "headerContact":"Kontakt",
+
+  
+  "homeSnippetHeader1": "Preverjeni materiali",
+  "homeSnippetBody1": "100 % materiala, ki ga predelamo, prihaja iz državnih gozdov in ima certifikat FSC® (C131643).",
+  "homeSnippetHeader2": "Čas dostave",
+  "homeSnippetBody2": "Vaš les bomo dostavili kamor koli na Poljskem. Ker je ustrezno zaščiten, pride varno in vedno pravočasno.",
+  "homeSnippetHeader3": "Naš pogon in izkušnje",
+  "homeSnippetBody3": "Oglejte si, kako uporabljamo znanje, ki smo ga pridobili v zadnjih 60 letih, za proizvodnjo lesa. Zato smo še vedno vodilni v regiji.",
+  "homeSnippetHeader4": "Posvetovanje, vodenje in svetovanje",
+  "homeSnippetBody4": "Vsem našim strankam svetujemo v vsaki fazi naročila. Predlagamo ustrezno vrsto materiala in izberemo ustrezno obdelavo.",
+
+
+
+
+  "aboutHead": "Smo perspektivno gradbeno podjetje.",
+  "aboutParagraph1": "Ki svoja dela opravlja z odliko.",
+  "aboutParagraph2": "Zavedamo se zahtevnosti in kompleksnosti naših del, zato vam strokovno predstavimo in svetujemo sklop najprimernejšega sistemskega dela za vas.",
+  "aboutParagraph3": "V času delovanja smo zaznamovali vrsto hiš,trgovskih,šolskih,turističnih,proizvodnih,poslovnih,športnih in stanovanjskih objektov v sloveniji in tujini.",
+  "aboutParagraph4": "Veliko izkušenj,kvalitetne storitve in uporaba visokokakovostnih materjalov je garancija za dolgotrajne,učinkovite in ugodne rešitve. Gradimo in izvajamo dela, ki izpopolnjujejo pričakovanja strank.",
+  "aboutFooter": "Veselimo se sodelovanja z vami.",
+
+
+
+
+  "contactFormHeader": "Bomo vam radi gledati.",
+  "contactFormHeadContact": "Kontakt",
+  "contactFormHeadForm": "oblika",
+  "contactFormName": "Ime",
+  "contactFormEmail": "E-naslov",
+  "contactFormPhone": "Telefon",
+  "contactFormMessage": "Sporočilo",
+  "contactFormTerms": "Z uporabo tega obrazca se strinjate s shranjevanjem in obdelavo vaših podatkov na tem spletnem mestu v skladu z zakonodajo o varstvu podatkov.",
+  "contactFormBtn": "Poslati",
+  "contactDetailsHeadDetails": "Podrobnosti"
+}

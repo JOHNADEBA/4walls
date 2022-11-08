@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="about-container">
+  <div class="about-text-hide" [class.about-text-show]="isAbout">
+    <p-card>
+      <ng-template pTemplate="header">
+        {{ "aboutHead" | translate }}
+      </ng-template>
+
+      <p>
+        {{ "aboutParagraph1" | translate }}
+      </p> <br />
+      <p>
+        {{ "aboutParagraph2" | translate }}
+      </p> <br />
+
+      <p>
+        {{ "aboutParagraph3" | translate }}
+      </p> <br />
+
+      <p>
+        {{ "aboutParagraph4" | translate }}
+      </p> <br />
+      <ng-template pTemplate="footer">
+        {{ "aboutFooter" | translate }}
+      </ng-template>
+    </p-card>
+  </div>
+
+  <div class="about-img" [class.about-img-show]="isAbout">
+    <img src="../../../assets/images/jan_seat.jpg" alt="about us" />
+  </div>
+</div>

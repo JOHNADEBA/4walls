@@ -1,0 +1,64 @@
+<div class="home-container">
+  <video autoplay [muted]="true" loop id="myVideo">
+    <source
+      src="../../../assets/videos/Eugy_-_Dance_For_Me_ft_Mr_Eazi_(talkglitz.net).mp4"
+      type="video/mp4"
+    />
+  </video>
+  <div class="video-overlay">
+    <div class="home-menu">
+      <p-menubar [model]="menuItemList">
+        <ng-template pTemplate="start">
+          <a routerLink="/"
+            ><img
+              src="assets/logo.jpg"
+              alt="4Walls logo"
+              height="35"
+              class="mt-1 mr-5 logo"
+          /></a>
+        </ng-template>
+      </p-menubar>
+    </div>
+
+    <div class="home-video-middle">
+      <img src="assets/logo.jpg" alt="4Walls logo" class="logo" />
+      <h2>{{ "aboutHead" | translate }}</h2>
+    </div>
+  </div>
+</div>
+
+<div class="snippet-container" *ngFor="let item of snippetData[0].details; index as index">
+  <div class="snippet-sub-container" [ngClass]="{ flip_div: index % 2 === 0 }">
+    <div
+      class="snippet-details"
+      [ngClass]="{
+        'flip-details details-left': index % 2 === 0,
+        'non-flip-details details-right': index % 2 !== 0,
+        'show-1': isShow1 && item.id === 1,
+        'show-2': isShow2 && item.id === 2,
+        'show-3': isShow3 && item.id === 3,
+        'show-4': isShow4 && item.id === 4
+      }"
+    >
+      <h2>{{ item.header }}</h2>
+      <p>{{ item.details }}</p>
+    </div>
+    <div
+      class="snippet-img-container"
+      [ngClass]="{
+        'flip-img': index % 2 === 0,
+        'non-flip-img': index % 2 !== 0,
+        'show-1': isShow1 && item.id === 1,
+        'show-2': isShow2 && item.id === 2,
+        'show-3': isShow3 && item.id === 3,
+        'show-4': isShow4 && item.id === 4
+      }"
+    >
+      <img
+        [ngClass]="{ 'img-right': index % 2 !== 0 }"
+        [src]="item.pic"
+        [alt]="item.header"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+{
+  "titles": {
+    "home": "Heimat",
+    "about": "Über uns",
+    "our-work": "Unsere Arbeit",
+    "contact": "Kontakt"
+  },
+  "routes": {
+    "home": "heimat",
+    "about": "über-uns",
+    "our-work": "unsere-arbeit",
+    "contact": "kontakt"
+  },
+
+  "headerHome":"Heimat",
+  "headerAbout":"Über Uns",
+  "headerWork":"Unsere Arbeit",
+  "headerContact":"Kontakt",
+
+  "homeSnippetHeader1": "Authentifizierte Materialien",
+  "homeSnippetBody1": "100 % des von uns verarbeiteten Materials stammt aus Staatsforsten und ist FSC®-zertifiziert (C131643).",
+  "homeSnippetHeader2": "Lieferzeit",
+  "homeSnippetBody2": "Wir liefern Ihr Schnittholz an jeden Ort in Polen. Da es ausreichend geschützt ist, kommt es sicher und immer pünktlich an.",
+  "homeSnippetHeader3": "Unser Antrieb und unsere Erfahrung",
+  "homeSnippetBody3": "Sehen Sie, wie wir das in den letzten 60 Jahren erworbene Wissen für die Holzproduktion nutzen. Deshalb sind wir nach wie vor führend in der Region.",
+  "homeSnippetHeader4": "Beratung, Führung und Beratung",
+  "homeSnippetBody4": "Vsem našim strankam svetujemo v vsaki fazi naročila. Predlagamo ustrezno vrsto materiala in izberemo ustrezno obdelavo.",
+
+  "aboutHead": "Hinter jeder guten Arbeit steht ein guter Handwerker.",
+  "aboutParagraph1": "Wir sind ein vielversprechendes Bauunternehmen, das seine Arbeit mit Exzellenz ausführt.",
+  "aboutParagraph2": "Wir sind uns der Anforderungen und Komplexität unserer Arbeit bewusst, deshalb präsentieren und beraten wir Sie professionell über die für Sie am besten geeignete Systemarbeit.",
+  "aboutParagraph3": "Während der Betriebszeit haben wir eine Reihe von Häusern, Handels-, Schul-, Touristen-, Produktions-, Geschäfts-, Sport- und Wohngebäuden in Slowenien und im Ausland markiert.",
+  "aboutParagraph4": "Viel Erfahrung, hochwertige Dienstleistungen und die Verwendung hochwertiger Materialien sind ein Garant für langlebige, effektive und erschwingliche Lösungen. Wir bauen und realisieren Werke, die die Erwartungen der Kunden übertreffen.",
+  "aboutFooter": "Wir freuen uns mit dir zu arbeiten.",
+
+  "contactFormHeader": "Wir freuen uns, von Ihnen zu hören.",
+  "contactFormHeadContact": "Kontakt",
+  "contactFormHeadForm": "Bilden",
+  "contactFormName": "Name",
+  "contactFormEmail": "Email",
+  "contactFormPhone": "Telefon",
+  "contactFormMessage": "Nachricht",
+  "contactFormTerms": "Mit der Nutzung dieses Formulars stimmen Sie der datenschutzrechtlichen Speicherung und Verarbeitung Ihrer Daten durch diese Website zu.",
+  "contactFormBtn": "Senden",
+  "contactDetailsHeadDetails": "Einzelheiten"
+}

@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div
+  class="snippet-container ourwork-container"
+  *ngFor="let item of ourWorkObj[0].details; index as index"
+>
+  <div class="snippet-sub-container" [ngClass]="{ flip_div: index % 2 === 0 }">
+    <div
+      class="snippet-details"
+      [ngClass]="{
+        'flip-details details-left': index % 2 === 0,
+        'non-flip-details details-right': index % 2 !== 0,
+        'show-1': isShow1 && item.id === 1,
+        'show-2': isShow2 && item.id === 2,
+        'show-3': isShow3 && item.id === 3,
+        'show-4': isShow4 && item.id === 4,
+        'show-5': isShow5 && item.id === 5
+      }"
+    >
+      <h2>{{ item.header }}</h2>
+      <p *ngIf="item.info1">{{ item.info1 }}</p>
+      <p *ngIf="item.info2">{{ item.info2 }}</p>
+      <p *ngIf="item.info3">{{ item.info3 }}</p>
+      <p *ngIf="item.info4">{{ item.info4 }}</p>
+      <p *ngIf="item.info5">{{ item.info5 }}</p>
+      <p *ngIf="item.info6">{{ item.info6 }}</p>
+      <h4 *ngIf="item.subheader1">{{ item.subheader1 }}</h4>
+      <p *ngIf="item.subinfo1">{{ item.subinfo1 }}</p>
+      <p *ngIf="item.subinfo2">{{ item.subinfo2 }}</p>
+      <p *ngIf="item.subinfo3">{{ item.subinfo3 }}</p>
+      <p *ngIf="item.subinfo4">{{ item.subinfo4 }}</p>
+      <p *ngIf="item.subinfo5">{{ item.subinfo5 }}</p>
+      <h4 *ngIf="item.subheader2">{{ item.subheader2 }}</h4>
+      <p *ngIf="item.sub2info1">{{ item.sub2info1 }}</p>
+      <p *ngIf="item.subinfo2">{{ item.subinfo2 }}</p>
+      <h4 *ngIf="item.subheader3">{{ item.subheader3 }}</h4>
+      <p *ngIf="item.sub3info1">{{ item.sub3info1 }}</p>
+      <p *ngIf="item.sub3info2">{{ item.sub3info2 }}</p>
+    </div>
+    <div
+      class="snippet-img-container"
+      [ngClass]="{
+        'flip-img': index % 2 === 0,
+        'non-flip-img': index % 2 !== 0,
+        'show-1': isShow1 && item.id === 1,
+        'show-2': isShow2 && item.id === 2,
+        'show-3': isShow3 && item.id === 3,
+        'show-4': isShow4 && item.id === 4,
+        'show-5': isShow5 && item.id === 5
+      }"
+    >
+      <img
+        [ngClass]="{ 'img-right': index % 2 !== 0 }"
+        [src]="item.pic"
+        [alt]="item.header"
+      />
+    </div>
+  </div>
+</div>

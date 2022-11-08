@@ -1,0 +1,303 @@
+.home-container {
+  min-width: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  #myVideo {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  .video-overlay {
+    background: rgba(9, 9, 9, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 0.4rem solid rgb(111, 206, 238);
+    .home-menu {
+      width: 85%;
+      margin: auto;
+
+      ::ng-deep .p-menubar {
+        background: transparent;
+        border: none;
+
+        .p-menubar-button {
+          position: absolute;
+          right: 1rem;
+        }
+
+        p-menubarsub {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+        }
+        .pi {
+          color: #fff;
+          font-size: 1.5rem;
+        }
+        .p-menuitem-link {
+          background: transparent !important;
+          margin: auto 1rem;
+          margin-bottom: 1rem;
+          border-bottom: 1px solid transparent;
+          border-radius: 0;
+        }
+        .p-menuitem-link:hover {
+          background: transparent !important;
+          border-bottom: 1px solid rgb(111, 206, 238);
+        }
+        .p-menuitem-link:focus {
+          box-shadow: none;
+        }
+        .p-menuitem-text {
+          background: transparent !important;
+          color: #fff !important;
+        }
+      }
+    }
+
+    .home-video-middle {
+      padding-bottom: 2rem;
+      border-bottom: 0.3rem solid rgb(111, 206, 238);
+      width: 50%;
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      top: 25%;
+      left: 25%;
+
+      .logo {
+        width: 25rem;
+        height: 10rem;
+      }
+      h2 {
+        font-family: "Titillium Web", sans-serif;
+        margin-top: 2rem;
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.snippet-container {
+  overflow: hidden;
+  margin: 3rem 0;
+  .flip_div {
+    flex-direction: row-reverse;
+  }
+  .snippet-sub-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .snippet-img-container {
+      transition: all 1s ease-in-out;
+      width: 50%;
+      margin-left: 0;
+      img {
+        width: 90%;
+        margin-right: 0;
+      }
+
+      .img-right {
+        margin-left: 10%;
+      }
+    }
+    .flip-img,
+    .non-flip-details {
+      transform: translateX(-100%);
+    }
+    .flip-details,
+    .non-flip-img {
+      transform: translateX(100%);
+    }
+
+    .snippet-details {
+      transition: all 1s ease-in-out;
+      width: 50%;
+
+      h2 {
+        font-family: "Oswald", Sans-serif;
+        font-size: 4rem;
+        color: rgb(111, 206, 238);
+        line-height: 4rem;
+        margin: 0 1rem 1rem 1rem;
+      }
+
+      p {
+        font-weight: 0;
+        font-family: "Oswald", Sans-serif;
+        font-size: 1.3rem;
+        margin: 0 1rem 2rem 1rem;
+      }
+    }
+    .show-1, .show-2, .show-3, .show-4 {
+      transform: translateX(0%);
+    }
+  }
+}
+
+.details-left {
+  margin-left: 3rem;
+}
+.details-right {
+  margin: 0 2rem;
+}
+
+
+
+@media only screen and (max-width: 1189px) and (min-width: 956px) {
+  .home-container {
+    .video-overlay {
+      .home-menu {
+        width: 95%;
+        margin: auto;
+        ::ng-deep .p-menubar {
+          p-menubarsub {
+            width: 100%;
+            display: flex;
+          }
+          .p-menuitem-link {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 1020px) {
+  .home-container {
+    .video-overlay {
+      .home-video-middle {
+        padding-bottom: 0.5rem;
+        border-bottom: 0.3rem solid rgb(111, 206, 238);
+
+        h2 {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 912px) and (min-width: 550px) {
+  .snippet-container {
+    .snippet-sub-container {
+      .snippet-img-container {
+        width: 100%;
+        img {
+          width: 100%;
+          margin-right: 0;
+        }
+        .img-right {
+          margin-left: 0;
+        }
+      }
+      .snippet-details {
+        width: 100%;
+        h2 {
+          font-size: 2rem;
+          line-height: 3rem;
+          margin: 0 1rem 0.3rem 0rem;
+        }
+        p {
+          font-size: 1rem;
+          margin: 0 1rem 0.3rem 0rem;
+        }
+      }
+    }
+  }
+  .details-left {
+    margin-left: 2rem;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .home-container {
+    .video-overlay {
+      .home-menu {
+        ::ng-deep .p-menubar {
+          .p-menuitem-link-active {
+            width: 100%;
+            margin: auto;
+            padding-left: 2.2rem !important;
+            background: rgb(111, 206, 238) !important;
+          }
+          .p-menuitem-text {
+            color: #000 !important;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 550px) {
+  .home-container {
+    .video-overlay {
+      .home-menu {
+        ::ng-deep .p-menubar {
+          .p-menuitem-link-active {
+            width: 100%;
+            margin: auto;
+            padding-left: 2.2rem !important;
+            background: rgb(111, 206, 238) !important;
+          }
+          .p-menuitem-text {
+            color: #000 !important;
+          }
+        }
+      }
+      .home-video-middle {
+        width: 80%;
+        top: 18%;
+        left: 10%;
+        .logo {
+          width: 15rem;
+        }
+        h2 {
+          width: 100%;
+          margin-top: 2rem;
+          font-size: 2rem;
+          border: red solid red;
+        }
+      }
+    }
+  }
+  .snippet-container {
+    .snippet-sub-container {
+      flex-direction: column;
+      .snippet-img-container {
+        width: 100%;
+        img {
+          width: 100%;
+          margin-right: 0;
+        }
+        .img-right {
+          margin-left: 0;
+        }
+      }
+      .snippet-details {
+        width: 100%;
+        h2 {
+          font-size: 2rem;
+          line-height: 3rem;
+          margin: 0 1rem 0.3rem 1rem;
+        }
+        p {
+          font-size: 1rem;
+          margin: 0 1rem 0.3rem 1rem;
+        }
+      }
+    }
+  }
+  .details-left {
+    margin-left: 0;
+  }
+  .details-right {
+    margin: 0;
+  }
+}
