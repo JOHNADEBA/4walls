@@ -58,5 +58,5 @@
   "contactDetailsHeadDetails": "Details",
   "errorTerms": "Please accept our terms and conditions to proceed.",
   "alertSuccessMessage": "Message Sent Successfully",
-  "alertFailedMessage" : "Failed to Send",
+  "alertFailedMessage": "Failed to Send"
 }
