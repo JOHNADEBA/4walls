@@ -43,5 +43,7 @@
   "contactFormTerms": "Z uporabo tega obrazca se strinjate s shranjevanjem in obdelavo vaših podatkov na tem spletnem mestu v skladu z zakonodajo o varstvu podatkov.",
   "contactFormBtn": "Poslati",
   "contactDetailsHeadDetails": "Podrobnosti",
-  "errorTerms": "Za nadaljevanje sprejmite naše pogoje in določila."
+  "errorTerms": "Za nadaljevanje sprejmite naše pogoje in določila.",
+  "alertSuccessMessage": "Sporočilo je bilo uspešno poslano",
+  "alertFailedMessage": "Pošiljanje ni uspelo"
 }

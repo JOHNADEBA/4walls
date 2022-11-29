@@ -27,6 +27,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { FileUploadModule } from 'primeng/fileupload';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { FileUploadModule } from 'primeng/fileupload';
     InputSwitchModule,
     FileUploadModule,
     HttpClientModule,
+    MessagesModule,
+    MessageModule,
     // EditorModule,
 
     TranslateModule.forRoot({

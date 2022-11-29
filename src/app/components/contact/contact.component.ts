@@ -15,6 +15,8 @@ export class ContactComponent implements AfterViewInit {
   isContact: boolean = false;
   isError: boolean = false;
   uploadedFiles: any[] = [];
+  successShowMgs: boolean = false;
+  failShowMgs: boolean = false;
 
   constructor() {}
   ngAfterViewInit(): void {
@@ -76,8 +78,9 @@ export class ContactComponent implements AfterViewInit {
     }
   }
 
-  sendMessage(formData: any) {
+  sendMessage(form: NgForm, formData: any) {
     const { email, name, message, phone, terms } = formData;
+
     if (
       email === '' ||
       name === '' ||
@@ -111,6 +114,16 @@ export class ContactComponent implements AfterViewInit {
     };
     Email.send(emailBody).then((mgs: any) => {
       console.log(mgs);
+      if (mgs === 'OK') {
+        form.resetForm();
+        this.successShowMgs = true;
+        this.failShowMgs = false;
+        setTimeout(() => {
+          this.successShowMgs = false;
+        }, 3000);
+      } else {
+        this.failShowMgs = true;
+      }
     });
   }
 }

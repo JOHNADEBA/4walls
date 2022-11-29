@@ -2,7 +2,7 @@
 <div class="contact-container">
   <div class="contact-form" [class.contact-form-show]="isContact">
     <p-card header="{{ 'contactFormHeader' | translate }}">
-      <form #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm.value)">
+      <form #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm, contactForm.value)">
         <h2 class="mb-4 text-4xl">
           {{ "contactFormHeadContact" | translate }}
           <span class="color">{{ "contactFormHeadForm" | translate }} </span>
@@ -143,7 +143,7 @@
           >
             {{ "errorTerms" | translate }}
           </p>
-          
+
           <button
             [disabled]="contactForm.invalid"
             class="mt-3"
@@ -151,6 +151,9 @@
           >
             {{ "contactFormBtn" | translate }}
           </button>
+
+          <p class="text-green-600 text-sm font-bold mt-3" *ngIf="successShowMgs">{{ "alertSuccessMessage" | translate }}.</p>
+          <p class="text-red-500 text-sm font-bold mt-3" *ngIf="failShowMgs">{{ "alertFailedMessage" | translate }}.</p>
         </div>
       </form>
     </p-card>
