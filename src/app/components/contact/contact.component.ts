@@ -13,6 +13,7 @@ declare let Email: any;
 export class ContactComponent implements AfterViewInit {
   private map: any;
   isContact: boolean = false;
+  isError: boolean = false;
   uploadedFiles: any[] = [];
 
   constructor() {}
@@ -57,45 +58,58 @@ export class ContactComponent implements AfterViewInit {
     marker.bindPopup('<b class="edit">Mislinjska Dobrava 68</b>').openPopup();
   }
 
-  onUpload(event: any) {
-    for (var i = 0; i < event.target.files.length; i++) {
-      this.uploadedFiles.push(event.target.files[i]);
+  async onUpload(files: any) {
+    const fileTarget = files.target.files;
+    try {
+      for (let i = 0; i < fileTarget.length; i++) {
+        const reader = new FileReader();
+        reader.readAsDataURL(fileTarget[i]);
+        reader.onload = () => {
+          this.uploadedFiles.push({
+            name: fileTarget[i].name,
+            data: reader.result,
+          });
+        };
+      }
+    } catch (error) {
+      console.log(error);
     }
-    //   for(let file of event.files) {
-    //     this.uploadedFiles.push(file);
-    // }
-    console.log(this.uploadedFiles);
   }
 
-  getTrip(formData: any) {
-    console.log(formData);
+  sendMessage(formData: any) {
     const { email, name, message, phone, terms } = formData;
+    if (
+      email === '' ||
+      name === '' ||
+      message === '' ||
+      phone === '' ||
+      terms === '' ||
+      terms === false
+    ) {
+      this.isError = true;
+      return;
+    }
+
+    this.isError = false;
+
+    const { sender, SecureToken } = environment.email;
     let subject = 'REQUEST';
 
-    console.log(this.uploadedFiles);
-
-    Email.send({
-      SecureToken: '6c8e858e-2ebc-4471-95e6-1963e2074968',
+    const emailBody = {
+      SecureToken,
       To: email,
-      From: 'jhnadeba@gmail.com', //4walls.gradbenadela@gmail.com
+      From: sender, //4walls.gradbenadela@gmail.com
+      FromName: name,
       Subject: subject,
       Body: `${message}<br /> 
         <br> Telefon: </b> ${phone}<br />
         <b>Name: </b>${name} <br />
-        <b>Email: </b>${email} <br />
+        <b>Email: </b>${email} <br /><br />
         <b>~End of Message.~</b>`,
 
-      Attachments: this.uploadedFiles.forEach((element: any) => {
-        console.log(element);
-        //https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80
-        [
-          {
-            name: element.name,
-            path: element.type,
-          },
-        ];
-      }),
-    }).then((mgs: any) => {
+      Attachments: this.uploadedFiles,
+    };
+    Email.send(emailBody).then((mgs: any) => {
       console.log(mgs);
     });
   }

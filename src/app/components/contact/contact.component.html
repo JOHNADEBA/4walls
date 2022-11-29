@@ -2,7 +2,7 @@
 <div class="contact-container">
   <div class="contact-form" [class.contact-form-show]="isContact">
     <p-card header="{{ 'contactFormHeader' | translate }}">
-      <form #contactForm="ngForm" (ngSubmit)="getTrip(contactForm.value)">
+      <form #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm.value)">
         <h2 class="mb-4 text-4xl">
           {{ "contactFormHeadContact" | translate }}
           <span class="color">{{ "contactFormHeadForm" | translate }} </span>
@@ -16,6 +16,9 @@
               </span>
               <span class="p-float-label">
                 <input
+                  [class.error]="name.invalid && name.touched"
+                  required
+                  minlength="2"
                   type="text"
                   id="inputgroup"
                   pInputText
@@ -23,7 +26,9 @@
                   ngModel
                   #name="ngModel"
                 />
-                <label for="inputgroup">{{ "contactFormName" | translate }}</label>
+                <label for="inputgroup">{{
+                  "contactFormName" | translate
+                }}</label>
               </span>
             </div>
           </div>
@@ -35,6 +40,9 @@
               </span>
               <span class="p-float-label">
                 <input
+                  required
+                  email
+                  [class.error]="email.invalid && email.touched"
                   type="text"
                   id="inputgroup"
                   pInputText
@@ -42,7 +50,9 @@
                   ngModel
                   #email="ngModel"
                 />
-                <label for="inputgroup">{{ "contactFormEmail" | translate }}</label>
+                <label for="inputgroup">{{
+                  "contactFormEmail" | translate
+                }}</label>
               </span>
             </div>
           </div>
@@ -54,6 +64,8 @@
               </span>
               <span class="p-float-label">
                 <input
+                  required
+                  [class.error]="phone.invalid && phone.touched"
                   type="text"
                   id="inputgroup"
                   pInputText
@@ -61,7 +73,9 @@
                   ngModel
                   #phone="ngModel"
                 />
-                <label for="inputgroup">{{ "contactFormPhone" | translate }}</label>
+                <label for="inputgroup">{{
+                  "contactFormPhone" | translate
+                }}</label>
               </span>
             </div>
           </div>
@@ -69,6 +83,8 @@
           <div class="p-col-12 p-md-4 mb-4">
             <span class="p-float-label">
               <textarea
+                required
+                [class.error]="message.invalid && message.touched"
                 inputId="textarea"
                 rows="5"
                 cols="30"
@@ -78,11 +94,13 @@
                 pInputTextarea
                 [autoResize]="true"
               ></textarea>
-              <label for="textarea">{{ "contactFormMessage" | translate }}</label>
+              <label for="textarea"
+                >{{ "contactFormMessage" | translate }}...</label
+              >
             </span>
           </div>
 
-          <div class="p-col-12 p-md-4 mb-4">
+          <!-- <div class="p-col-12 p-md-4 mb-4">
             <p-fileUpload
               name="myfile[]"
               url="./upload.php"
@@ -93,7 +111,7 @@
               invalidFileSizeMessageDetail="maximum upload size is {0}."
               (onUpload)="onUpload($event)"
             ></p-fileUpload>
-          </div>
+          </div> -->
 
           <div class="p-col-12 p-md-4 mb-4">
             <input
@@ -106,27 +124,43 @@
           </div>
 
           <div
-            class="p-col-12 p-md-4 mb-4 flex justify-content-between align-items-center"
+            class="p-col-12 p-md-4 mb-2 flex justify-content-between align-items-center"
           >
             <span class="p-float-label">
               <p-inputSwitch
+                required
                 name="terms"
                 ngModel
                 #terms="ngModel"
               ></p-inputSwitch>
             </span>
-            <h5 class="ml-3">{{ "contactFormTerms" | translate }}
-            </h5>
+            <h5 class="ml-3">{{ "contactFormTerms" | translate }}</h5>
           </div>
 
-          <button class="btn">{{ "contactFormBtn" | translate }}</button>
+          <p
+            *ngIf="(terms.invalid && terms.touched) || isError"
+            class="text-sm text-red-600 font-bold text-center mb-2"
+          >
+            {{ "errorTerms" | translate }}
+          </p>
+          
+          <button
+            [disabled]="contactForm.invalid"
+            class="mt-3"
+            [ngClass]="contactForm.invalid ? 'invalid-btn' : 'btn'"
+          >
+            {{ "contactFormBtn" | translate }}
+          </button>
         </div>
       </form>
     </p-card>
   </div>
   <div class="contact-details" [class.contact-details-show]="isContact">
-    <p-card class="p-0">  
-      <h2 class="mb-4 text-4xl">{{ "contactFormHeadContact" | translate }} <span class="color">{{ "contactDetailsHeadDetails" | translate }}</span></h2>
+    <p-card class="p-0">
+      <h2 class="mb-4 text-4xl">
+        {{ "contactFormHeadContact" | translate }}
+        <span class="color">{{ "contactDetailsHeadDetails" | translate }}</span>
+      </h2>
 
       <div
         class="each-contact-head w-full flex justify-content-between flex-wrap"
@@ -148,7 +182,7 @@
           <p class="text-xs">4walls.gradbenadela@gmail.com</p>
         </div>
 
-        <div class="each-contact third">
+        <div class="each-contact">
           <h3><i class="mb-2 pi pi-map-marker text-3xl color"></i></h3>
           <p class="text-xs">Mislinjska Dobrava 68</p>
           <p class="text-xs">Slovenia</p>

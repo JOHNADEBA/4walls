@@ -11,12 +11,11 @@
     "our-work": "our-work",
     "contact": "contact"
   },
- 
+
   "headerHome": "Home",
   "headerAbout": "About Us",
   "headerWork": "Our Work",
   "headerContact": "Contact",
- 
 
   "homeitems": [
     {
@@ -56,5 +55,6 @@
   "contactFormMessage": "Message",
   "contactFormTerms": "By using this form, you agree to the storage and processing of your data by this website in accordance with data protection law.",
   "contactFormBtn": "Send",
-  "contactDetailsHeadDetails": "Details"
+  "contactDetailsHeadDetails": "Details",
+  "errorTerms": "Please accept our terms and conditions to proceed."
 }

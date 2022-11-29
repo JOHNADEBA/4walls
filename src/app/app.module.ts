@@ -62,7 +62,10 @@ import { FileUploadModule } from 'primeng/fileupload';
         deps: [HttpClient],
       },
     }),
-    NgxTranslateRoutesModule.forRoot(),
+    NgxTranslateRoutesModule.forRoot({
+      enableRouteTranslate: false,
+      // enableTitleTranslate: true
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -5,10 +5,11 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  // margin-bottom: 4rem;
 }
+
 ::ng-deep .p-menubar {
-  width: 80%;
+  background: transparent;
+  width: 85%;
   margin: auto;
   border-radius: 0;
   border: none;
@@ -16,7 +17,6 @@
 
   .p-menubar-button {
     position: absolute;
-    
     right: 1rem;
   }
 
@@ -27,7 +27,7 @@
   }
 
   .p-menuitem-link {
-    // margin: auto 1rem;
+    margin: auto 1rem;
   }
   ::ng-deep .p-menuitem-link-active {
     background: rgb(111, 206, 238) !important;
@@ -41,32 +41,27 @@
 
   .p-menuitem-link:focus {
     box-shadow: none;
-  
+
     border: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
   }
-  
 }
 
-// :host ::ng-deep .p-menuitem-link:enabled:focus {
-//   box-shadow: none;
-
-//   border: none;
-//   -webkit-box-shadow: none;
-//   -moz-box-shadow: none;
-// }
-
-
+@media only screen and (max-width: 1189px) and (min-width: 956px) {
+  ::ng-deep .p-menubar {
+    p-menubarsub {
+      width: 100%;
+      display: flex;
+    }
+    .p-menuitem-link {
+      margin: 0;
+    }
+  }
+}
 
 @media only screen and (max-width: 912px) {
   .header-div {
-  padding: 0rem 2rem ;
+    padding: 0rem 2rem;
   }
-  ::ng-deep .p-menubar {
-    width: 100%;
-  }
- 
 }
-
-

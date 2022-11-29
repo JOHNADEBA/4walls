@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+// import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AllService } from './Services/all.service';
 @Component({
@@ -9,15 +9,16 @@ import { AllService } from './Services/all.service';
 })
 export class AppComponent {
   title = '4walls';
-currentLocation !:string
-  constructor(public translate: TranslateService, public router: Router, public  currentLang:AllService) {}
+  constructor(public translate: TranslateService, 
+    // public router: Router, 
+    public  currentLang:AllService) {}
 
   ngOnInit(): void {
-    this.router.events.subscribe((event: any) => {
-      if (event instanceof NavigationEnd) {
-        this.currentLocation = (<NavigationEnd>event).url
-      }
-    });
+    // this.router.events.subscribe((event: any) => {
+    //   if (event instanceof NavigationEnd) {
+    //     this.currentLocation = (<NavigationEnd>event).url
+    //   }
+    // });
 
     this.translate.addLangs(['sl', 'en', 'de']);
     // const lang = localStorage.getItem('lang') || 'sl';

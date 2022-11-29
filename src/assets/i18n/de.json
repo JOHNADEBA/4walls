@@ -42,5 +42,6 @@
   "contactFormMessage": "Nachricht",
   "contactFormTerms": "Mit der Nutzung dieses Formulars stimmen Sie der datenschutzrechtlichen Speicherung und Verarbeitung Ihrer Daten durch diese Website zu.",
   "contactFormBtn": "Senden",
-  "contactDetailsHeadDetails": "Einzelheiten"
+  "contactDetailsHeadDetails": "Einzelheiten",
+  "errorTerms": "Bitte akzeptieren Sie unsere Allgemeinen Geschäftsbedingungen, um fortzufahren."
 }

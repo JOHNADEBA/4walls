@@ -11,6 +11,7 @@ import { AllService } from 'src/app/Services/all.service';
 export class HeaderComponent implements OnInit {
   menuItemList!: MenuItem[];
   menuNames: any[] = [];
+
   constructor(
     public translate: TranslateService,
     public currentLang: AllService
@@ -18,21 +19,21 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllMenuNames();
+
   }
   getAllMenuNames() {
-    this.getTranslatedItem('headerHome');
-    this.getTranslatedItem('headerAbout');
-    this.getTranslatedItem('headerWork');
-    this.getTranslatedItem('headerContact');
+    this.getTranslatedMenuItem('headerHome');
+    this.getTranslatedMenuItem('headerAbout');
+    this.getTranslatedMenuItem('headerWork');
+    this.getTranslatedMenuItem('headerContact');
   }
   getLanguage(lang: string) {
     this.translate.setDefaultLang(lang);
-    // localStorage.setItem('lang', lang);
     this.currentLang.setLang(lang);
     this.getAllMenuNames();
   }
 
-  getTranslatedItem(phrase: string) {
+  getTranslatedMenuItem(phrase: string) {
     this.translate.get(phrase).subscribe((res: string) => {
       if (phrase === 'headerHome') this.menuNames[0] = res;
 
@@ -47,6 +48,7 @@ export class HeaderComponent implements OnInit {
           label: this.menuNames[0],
           routerLink: [''],
           routerLinkActiveOptions: { exact: true },
+          // command: () => window.location.reload()
         },
         {
           label: this.menuNames[1],

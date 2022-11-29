@@ -2,8 +2,9 @@
   overflow: hidden;
   width: 90%;
   height: 100%;
-  margin: 2rem auto;
-  margin-top: 6rem;
+  margin: auto;
+  margin-top: 8rem;
+  margin-bottom: 7.5rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -14,8 +15,10 @@
     transform: translateX(-112%);
     transition: all 1s ease-in-out;
     ::ng-deep .p-card {
+      border-radius: 1rem;
       border: solid 0.1rem rgb(111, 206, 238);
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      box-shadow: none;
       .p-card-body {
         padding: 3rem 4rem;
       }
@@ -34,15 +37,17 @@
       padding-top: 0;
       height: 25%;
       border-radius: 1rem;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      box-shadow: none;
+      // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       .p-card-content {
         padding: 0;
       }
     }
     #map {
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      box-shadow: none;
+      // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       border-radius: 1rem;
-      height: 72.5%;
+      height: 72%;
       margin-top: 1.3rem;
       border: solid 0.1rem rgb(111, 206, 238);
     }
@@ -54,6 +59,19 @@
   }
 }
 
+input::file-selector-button {
+  font-weight: bold;
+  background: transparent;
+  color: rgb(111, 206, 238);
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border: thin solid rgba(191, 189, 189, 0.7);
+  border-radius: 0.3rem;
+}
+.error {
+  border: solid 1px red;
+}
+
 ::ng-deep .p-fluid .p-fileupload .p-button {
   background: rgb(111, 206, 238);
   border: none;
@@ -61,9 +79,20 @@
   padding: 0.5rem 1rem;
 }
 
-@media only screen and (max-width: 999px) {
+@media only screen and (max-width: 1367px) and (min-width: 1001px) {
+  ::ng-deep .p-fileupload .p-fileupload-buttonbar .p-button {
+    margin-top: 1rem;
+  }
+  ::ng-deep .p-fluid .p-fileupload .p-button {
+    padding: 0.5rem 0.6rem;
+  }
+}
+
+@media only screen and (max-width: 1104px) {
   .contact-container {
     flex-direction: column;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
 
     .contact-form {
       margin-right: 0;
@@ -77,20 +106,6 @@
         height: 30rem;
       }
     }
-  }
-}
-@media only screen and (max-width: 1367px) and (min-width: 1001px) {
-  ::ng-deep .p-fileupload .p-fileupload-buttonbar .p-button {
-    margin-top: 1rem;
-  }
-  ::ng-deep .p-fluid .p-fileupload .p-button {
-    padding: 0.5rem 0.6rem;
-  }
-}
-
-@media only screen and (max-width: 1204px) and (min-width: 1001px) {
-  .third {
-    margin-top: 1rem;
   }
 }
 
