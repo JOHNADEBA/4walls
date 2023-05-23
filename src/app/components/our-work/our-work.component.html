@@ -1,19 +1,15 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 <div
   class="snippet-container ourwork-container"
   *ngFor="let item of ourWorkObj[0].details; index as index"
 >
-  <div class="snippet-sub-container" [ngClass]="{ flip_div: index % 2 === 0 }">
+  <div class="snippet-sub-container" [ngClass]="{ flip_div: index % 2 === 0 }" #snippetSubContainer>
     <div
       class="snippet-details"
       [ngClass]="{
         'flip-details details-left': index % 2 === 0,
         'non-flip-details details-right': index % 2 !== 0,
-        'show-1': isShow1 && item.id === 1,
-        'show-2': isShow2 && item.id === 2,
-        'show-3': isShow3 && item.id === 3,
-        'show-4': isShow4 && item.id === 4,
-        'show-5': isShow5 && item.id === 5
+        'show-1': index === 0 || isSnippetVisible[index] 
       }"
     >
       <h2>{{ item.header }}</h2>
@@ -41,11 +37,7 @@
       [ngClass]="{
         'flip-img': index % 2 === 0,
         'non-flip-img': index % 2 !== 0,
-        'show-1': isShow1 && item.id === 1,
-        'show-2': isShow2 && item.id === 2,
-        'show-3': isShow3 && item.id === 3,
-        'show-4': isShow4 && item.id === 4,
-        'show-5': isShow5 && item.id === 5
+        'show-1': index === 0 || isSnippetVisible[index] 
       }"
     >
       <img

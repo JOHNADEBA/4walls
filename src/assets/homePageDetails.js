@@ -1,4 +1,4 @@
-export const homeItems = [
+  export const homeItems = [
   {
     lang: "en",
     details: [

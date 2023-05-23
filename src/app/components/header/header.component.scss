@@ -6,6 +6,12 @@
   left: 0;
   z-index: 1000;
 }
+.home-page{
+  background: transparent;
+  color: #fff !important;
+  position: absolute;
+
+}
 
 ::ng-deep .p-menubar {
   background: transparent;
@@ -29,8 +35,12 @@
   .p-menuitem-link {
     margin: auto 1rem;
   }
+  .p-menuitem-text {
+    background: transparent ;
+    color: #fff ;
+  }
   ::ng-deep .p-menuitem-link-active {
-    background: rgb(111, 206, 238) !important;
+    background: rgb(111, 206, 238) ;
     color: #fff !important;
     .p-menuitem-text {
       color: #fff !important;
@@ -38,6 +48,7 @@
       outline: 0;
     }
   }
+  
 
   .p-menuitem-link:focus {
     box-shadow: none;

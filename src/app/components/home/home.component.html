@@ -7,17 +7,17 @@
   </video>
   <div class="video-overlay">
     <div class="home-menu">
-      <p-menubar [model]="menuItemList">
-        <ng-template pTemplate="start">
-          <a routerLink="/"
-            ><img
-              src="assets/logo.jpg"
-              alt="4Walls logo"
-              height="35"
-              class="mt-1 mr-5 logo"
-          /></a>
-        </ng-template>
-      </p-menubar>
+      <!-- <p-menubar [model]="menuItemList"> -->
+      <ng-template pTemplate="start">
+        <a routerLink="/"
+          ><img
+            src="assets/logo2.png"
+            alt="4Walls logo"
+            height="35"
+            class="mt-1 mr-5 logo"
+        /></a>
+      </ng-template>
+      <!-- </p-menubar> -->
     </div>
 
     <div class="home-video-middle">
@@ -27,17 +27,21 @@
   </div>
 </div>
 
-<div class="snippet-container" *ngFor="let item of snippetData[0].details; index as index">
-  <div class="snippet-sub-container" [ngClass]="{ flip_div: index % 2 === 0 }">
+<div
+  class="snippet-container"
+  *ngFor="let item of snippetData[0].details; index as index"
+>
+  <div
+    class="snippet-sub-container"
+    [ngClass]="{ flip_div: index % 2 === 0 }"
+    #snippetSubContainer
+  >
     <div
       class="snippet-details"
       [ngClass]="{
         'flip-details details-left': index % 2 === 0,
         'non-flip-details details-right': index % 2 !== 0,
-        'show-1': isShow1 && item.id === 1,
-        'show-2': isShow2 && item.id === 2,
-        'show-3': isShow3 && item.id === 3,
-        'show-4': isShow4 && item.id === 4
+        'show-1': isSnippetVisible[index]
       }"
     >
       <h2>{{ item.header }}</h2>
@@ -48,10 +52,7 @@
       [ngClass]="{
         'flip-img': index % 2 === 0,
         'non-flip-img': index % 2 !== 0,
-        'show-1': isShow1 && item.id === 1,
-        'show-2': isShow2 && item.id === 2,
-        'show-3': isShow3 && item.id === 3,
-        'show-4': isShow4 && item.id === 4
+        'show-1': isSnippetVisible[index]
       }"
     >
       <img
